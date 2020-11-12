@@ -3,9 +3,9 @@
     <b-carousel
       id="carousel-1"
       v-model="slide"
+      :interval="0"
       controls
       indicators
-      background="#ababab"
       img-width="480"
       img-height="480"
       style="text-shadow: 1px 1px 2px #333;"
@@ -29,10 +29,10 @@
       </b-carousel-slide>
     </b-carousel>
 
-    <p class="mt-4">
+    <!-- <p class="mt-4">
       Slide #: {{ slide }}<br>
       Sliding: {{ sliding }}
-    </p>
+    </p> -->
   </div>
 </template>
 
@@ -58,33 +58,40 @@ export default {
 <style lang="scss">
 
 #card {
+  font-family: Lato;
+  .carousel{
+  -webkit-box-shadow: 0px 0px 10px 5px rgba(242,242,242,0.62);
+  box-shadow: 0px 0px 10px 5px rgba(242,242,242,0.62) !important;
+  }
+
   img {
-  //   background: repeating-linear-gradient(
-  //   0deg,
-  //   transparent,
-  //   transparent 40px,
-  //   #fff 40px,
-  //   #fff 80px
-  // ),
-  // linear-gradient(
-  //   to bottom,
-  //   #F66928,
-  //   #F6812C
-  // )
-  background-color: orange;
-  border: 1px solid orange;
+  background-color: #fff;
+  }
+  .carousel-caption {
+    top: 0;
+    bottom: auto;
 
   }
+
   h3 {
-    font-family: "Rumble-Brave", Helvetica, Arial;
+    font-family: Lato, Helvetica, Arial;
     color: black;
-    font-size: 3rem;
+    font-size: 2rem;
     text-shadow: none;
+    margin-top: 0;
   }
   p {
     color: black;
     text-shadow: none;
   }
+  .carousel-control-prev-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23ff0000' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
+  }
+
+  .carousel-control-next-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23ff0000' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
+  }
+
 }
 
 </style>

@@ -1,36 +1,21 @@
 <template>
-  <div id="navbar">
-    <b-navbar toggleable="md" type="dark">
-      <b-navbar-brand href="#">NavBar</b-navbar-brand>
+  <div class="container-fluid" id="navbar">
+    <b-navbar class="container" toggleable="md" type="light">
+      <b-navbar-brand href="#">Oui to it</b-navbar-brand>
 
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav>
-          <b-nav-item href="#">Link</b-nav-item>
-          <b-nav-item href="#" disabled>Disabled</b-nav-item>
+          <router-link to="/">Home</router-link>
         </b-navbar-nav>
 
-        <!-- Right aligned nav items -->
-        <b-navbar-nav class="ml-auto">
-          <b-nav-form>
-            <b-form-input size="sm" class="mr-sm-2" placeholder="Search"></b-form-input>
-            <b-button size="sm" class="my-2 my-sm-0" type="submit">Search</b-button>
-          </b-nav-form>
+        <b-navbar-nav>
+          <router-link to="/categories">Categories</router-link>
+        </b-navbar-nav>
 
-          <b-nav-item-dropdown text="Lang" right>
-            <b-dropdown-item href="#">EN</b-dropdown-item>
-            <b-dropdown-item href="#">ES</b-dropdown-item>
-            <b-dropdown-item href="#">RU</b-dropdown-item>
-            <b-dropdown-item href="#">FA</b-dropdown-item>
-          </b-nav-item-dropdown>
-          <b-nav-item-dropdown right>
-          <template #button-content>
-            <em>User</em>
-          </template>
-            <b-dropdown-item href="#">Profile</b-dropdown-item>
-            <b-dropdown-item href="#">Sign Out</b-dropdown-item>
-          </b-nav-item-dropdown>
+        <b-navbar-nav>
+          <router-link to="/about">About</router-link>
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
@@ -45,8 +30,42 @@ export default {
 
 <style scoped lang="scss">
 
+#navbar {
+  border-bottom: 3px lightgray;
+  border-top: 3px lightgrey;
+  border-right: white;
+  border-left: white;
+  border-style: dashed;
+
 .b-navbar {
   color: black;
+}
+
+.navbar-brand {
+    font-family: "Sacramento", Helvetica, Arial;
+    color: black;
+    font-size: 1.6rem;
+    margin: 0 1rem 0 0;
+    color: #FE1753;
+      &:hover {
+      color: #FE1753;
+      text-decoration: none;
+      text-shadow: 10px 12px rgba(50, 50, 50, 0.2);
+    }
+}
+
+a {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  color: #041125;
+  margin:  0 1rem;
+    &:hover {
+      color: #FE1753;
+      text-decoration: none;
+      text-shadow: 10px 12px rgba(50, 50, 50, 0.2);
+    }
+
+}
+
 }
 
 </style>

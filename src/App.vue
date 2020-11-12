@@ -1,25 +1,27 @@
 <template>
   <div>
     <Navbar/>
+    <CallToAction/>
     <div id="app">
-      <div id="nav">
-        <router-link to="/">Home</router-link> |
-        <router-link to="/about">About</router-link>
-      </div>
-      <router-view/>
     </div>
       <CardCollection/>
+      <Footer/>
   </div>
 </template>
 
 <script>
 import Navbar from '@/components/Navbar.vue'
 import CardCollection from '@/components/CardCollection.vue'
+import Footer from '@/components/Footer.vue'
+import CallToAction from '@/components/CallToAction.vue'
+
 export default {
   name: 'App',
   components: {
     Navbar,
-    CardCollection
+    CardCollection,
+    Footer,
+    CallToAction
   }
 }
 </script>
@@ -47,8 +49,8 @@ export default {
 }
 
 @font-face {
-  font-family: "Rumble-Brave";
-  src: local("Rumble-Brave"),
-   url(./fonts/Rumble-Brave.otf) format("opentype");
+  font-family: "Sacramento";
+  src: local("Sacramento"),
+   url(./fonts/Sacramento.ttf) format("truetypefont");
 }
 </style>
