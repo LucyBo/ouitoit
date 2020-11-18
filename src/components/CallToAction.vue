@@ -9,8 +9,8 @@
 <style scoped lang ="scss">
 
 #call-to-action {
-  background: rgb(254,23,83);
-  background: linear-gradient(180deg, rgba(254,23,83,1) 17%, rgba(254,52,68,1) 55%);
+  /* background: #3E76D5; */
+  background: linear-gradient(180deg, #3E76D5 17%, #4481eb 55%);
   padding: 1rem 0;
   font-family: Lato;
   color:white;

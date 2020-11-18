@@ -4,7 +4,7 @@
         <p class="brand">Oui to it</p>
         <p>Get daily tips and tricks for improve your skills!</p>
         <div class="input-group">
-        <b-form-input v-model="text" placeholder="Enter your e-mail"></b-form-input><b-button variant="outline-light">Newsletter!</b-button></div>
+        <b-form-input v-model="text" placeholder="Enter your e-mail"></b-form-input><b-button variant="outline-light">This button doesn't do anything yet!</b-button></div>
       <p class="social">
         Folow us: <a href="/"><img alt="facebook logo" src="../assets/facebook.png"></a><a href="/"><img alt="facebook logo" src="../assets/instagram.png"></a><a href="/"><img alt="facebook logo" src="../assets/github.png"></a>
       </p>
@@ -34,8 +34,8 @@ export default {
 
 <style scoped lang="scss">
 #footer {
-  background: rgb(254,23,83);
-  background: linear-gradient(180deg, rgba(254,23,83,1) 17%, rgba(254,52,68,1) 55%);
+  // background: #3E76D5;
+  background: linear-gradient(180deg, #3E76D5 17%, #4481eb 55%);
   padding: 2rem 0 0 0;
   font-family: Lato;
   input {
