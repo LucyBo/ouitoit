@@ -16,31 +16,19 @@
       <b-carousel-slide caption="Question" img-blank img-alt="Blank image">
         <div class="image-overlay"></div>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eros felis, tincidunt
-          a tincidunt eget, convallis vel est. Ut pellentesque ut lacus vel interdum.
+          {{flashcard.question}}
         </p>
       </b-carousel-slide>
 
         <b-carousel-slide caption="Answer" img-blank img-alt="Blank image">
-        <pre><code class="text-left">body {
-background-color: lightblue;
-}
-h1 {
-color: white;
-text-align: center;
-}
-p {
-font-family: verdana;
-font-size: 20px;
-}
-        </code></pre>
+        <p>
+          {{flashcard.answer}}
+        </p>
+        <p>
+          {{flashcard.timestamp}}
+        </p>
       </b-carousel-slide>
     </b-carousel>
-
-    <!-- <p class="mt-4">
-      Slide #: {{ slide }}<br>
-      Sliding: {{ sliding }}
-    </p> -->
   </div>
 </template>
 
@@ -59,7 +47,8 @@ export default {
     onSlideEnd (slide) {
       this.sliding = false
     }
-  }
+  },
+  props: ['flashcard']
 }
 </script>
 

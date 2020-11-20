@@ -1,28 +1,28 @@
 
 <template>
   <div class="home">
-    <b-container-fluid>
+    <b-container>
       <b-row>
         <b-col class="text-left" sm="auto" md="6" lg="6" xl="6" >
           <p>Learning languages gives you a freedom to travel unexpected roads without fear. </p>
           <p>Learning with <span class="brand">Oui to it</span> gives you a chance to acquire self-confidence in speaking all dialects of JavaScript.</p>
         </b-col>
         <b-row>
-                  <b-col sm="12" md="6" lg="3" xl="3" >
-                    Discover theory and use what you learn
-                  </b-col>
-                  <b-col sm="12" md="6" lg="3" xl="3" >
-                    Remeber everything and back to review whenerver you want
-                  </b-col>
-                  <b-col sm="12" md="6" lg="3" xl="3" >
-                    Use social media for improving your skills
-                  </b-col>
-                  <b-col sm="12" md="3" lg="3" xl="3" >
-                    Learn easy as a child!
-                  </b-col>
+          <b-col sm="12" md="6" lg="3" xl="3" >
+            Discover theory and use what you learn
+          </b-col>
+          <b-col sm="12" md="6" lg="3" xl="3" >
+            Remeber everything and back to review whenerver you want
+          </b-col>
+          <b-col sm="12" md="6" lg="3" xl="3" >
+            Use social media for improving your skills
+          </b-col>
+          <b-col sm="12" md="3" lg="3" xl="3" >
+            Learn easy as a child at any time!
+          </b-col>
         </b-row>
       </b-row>
-    </b-container-fluid>
+    </b-container>
     <img alt="Vue logo" src="../assets/card-croissant.png">
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
   </div>
@@ -36,21 +36,6 @@ export default {
   name: 'Home',
   components: {
     // HelloWorld
-  },
-  data () {
-    return {
-      slide: 0,
-      sliding: null
-    }
-  },
-  methods: {
-    onSlideStart (slide) {
-      this.sliding = true
-    },
-    onSlideEnd (slide) {
-      this.sliding = false
-    }
-
   }
 }
 </script>
