@@ -1,5 +1,5 @@
 <template>
-  <div id="footer" class="container-fluid">
+  <div id="footer" class="container-fluid text-left">
     <b-container class="bv-example-row">
         <p class="brand">Oui to it</p>
         <p>Get daily tips and tricks for improve your skills!</p>
@@ -17,6 +17,7 @@
         </p>
         <p>Icons made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
         </p>
+        <p>Photo by Andrea Piacquadio from Pexels</p>
       </b-container>
     </div>
   </div>
@@ -37,7 +38,7 @@ export default {
   // background: #3E76D5;
   background: linear-gradient(180deg, #3E76D5 17%, #4481eb 55%);
   padding: 2rem 0 0 0;
-  font-family: Lato;
+  font-family: Alice;
   input {
     max-width: 315px;
     border-radius: 0;

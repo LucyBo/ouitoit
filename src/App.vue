@@ -1,18 +1,16 @@
 <template>
   <div id="app">
     <Navbar/>
-    <router-view/>
     <CallToAction/>
+    <router-view/>
     <div id="app">
     </div>
-      <CardCollection/>
       <Footer/>
   </div>
 </template>
 
 <script>
 import Navbar from '@/components/Navbar.vue'
-import CardCollection from '@/components/CardCollection.vue'
 import Footer from '@/components/Footer.vue'
 import CallToAction from '@/components/CallToAction.vue'
 
@@ -20,7 +18,6 @@ export default {
   name: 'App',
   components: {
     Navbar,
-    CardCollection,
     Footer,
     CallToAction
   }

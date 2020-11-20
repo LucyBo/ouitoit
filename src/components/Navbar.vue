@@ -12,7 +12,7 @@
         </b-navbar-nav>
 
         <b-navbar-nav>
-          <router-link to="/categories">Categories  |</router-link>
+          <router-link to="/flashcards">Flashcards  |</router-link>
         </b-navbar-nav>
 
         <b-navbar-nav>
@@ -67,7 +67,7 @@ img {
 }
 
 a {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Alice;
   color: #3E76D5;
   margin:  0 1rem;
     &:hover {
