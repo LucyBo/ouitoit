@@ -1,7 +1,7 @@
 <template>
   <div id="call-to-action" class="container-fluid">
     <div class="container text-center">
-    <p>Say -oui to IT! and dive into programming-theme flashcards!</p>
+    <p>Say -si to IT! and dive into programming-theme flashcards!</p>
     </div>
   </div>
 </template>
@@ -10,9 +10,10 @@
 
 #call-to-action {
   /* background: #3E76D5; */
-  background: linear-gradient(180deg, #3E76D5 17%, #4481eb 55%);
+  background: linear-gradient(180deg, #F95965 17%, #F95965 55%);
   padding: 1rem 0;
   font-family: Lato;
+  font-weight: 700;
   color:white;
   font-size: 1.4rem;
   p {

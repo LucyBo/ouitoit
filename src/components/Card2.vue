@@ -1,4 +1,5 @@
 <template>
+<b-col class="card" sm="12" md="6" lg="4">
   <div id="card">
     <b-carousel
       id="carousel-1"
@@ -30,6 +31,7 @@
       </b-carousel-slide>
     </b-carousel>
   </div>
+  </b-col>
 </template>
 
 <script>

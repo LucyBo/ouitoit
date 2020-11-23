@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Navbar/>
-    <CallToAction/>
+    <!-- <CallToAction/> -->
     <router-view/>
     <div id="app">
     </div>
@@ -12,14 +12,14 @@
 <script>
 import Navbar from '@/components/Navbar.vue'
 import Footer from '@/components/Footer.vue'
-import CallToAction from '@/components/CallToAction.vue'
+// import CallToAction from '@/components/CallToAction.vue'
 
 export default {
   name: 'App',
   components: {
     Navbar,
-    Footer,
-    CallToAction
+    Footer
+    // CallToAction
   }
 }
 </script>

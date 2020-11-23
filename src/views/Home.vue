@@ -1,31 +1,37 @@
 
 <template>
+<section>
   <div class="home">
     <b-container>
       <b-row>
         <b-col class="text-left" sm="auto" md="6" lg="6" xl="6" >
-          <p>Learning languages gives you a freedom to travel unexpected roads without fear. </p>
-          <p>Learning with <span class="brand">Oui to it</span> gives you a chance to acquire self-confidence in speaking all dialects of JavaScript.</p>
+          <p>Learning languages gives you a freedom to travel unexpected roads without fear.
+          </p>
+          <p>Learning with <span class="brand">Si to it </span> gives you a chance to acquire self-confidence in speaking all dialects of JavaScript.
+          </p>
         </b-col>
-        <b-row>
-          <b-col sm="12" md="6" lg="3" xl="3" >
+      </b-row>
+    </b-container>
+  </div>
+  <b-container>
+  <div class="steps">
+    <b-row class="text-center align-items-center">
+          <b-col class="deko" sm="auto" md="6" lg="3" xl="3" >
             Discover theory and use what you learn
           </b-col>
-          <b-col sm="12" md="6" lg="3" xl="3" >
+          <b-col class="deko" sm="auto" md="6" lg="3" xl="3" >
             Remeber everything and back to review whenerver you want
           </b-col>
-          <b-col sm="12" md="6" lg="3" xl="3" >
+          <b-col class="deko" sm="auto" md="6" lg="3" xl="3" >
             Use social media for improving your skills
           </b-col>
-          <b-col sm="12" md="3" lg="3" xl="3" >
+          <b-col class="deko" sm="auto" md="3" lg="3" xl="3" >
             Learn easy as a child at any time!
           </b-col>
         </b-row>
-      </b-row>
-    </b-container>
-    <img alt="Vue logo" src="../assets/card-croissant.png">
-    <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
   </div>
+  </b-container>
+</section>
 </template>
 
 <script>
@@ -42,35 +48,60 @@ export default {
 
 <style scoped lang="scss">
 .home {
-  background: url("../assets/home-page.jpeg");
-  opacity: 0.9;
-  background-position: center;
+  background: url("../assets/pex.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
+  font-weight: 700;
+  .row {
+    padding: 8rem 0;
+    font-family: Lato;
+    color: white;
+    font-weight: 700;
+    .text-left {
+      margin-left: 0rem;
+    }
+  }
   p {
-    color: black;
-    font-family: Alice;
+    margin-top: 3rem;
+    color: white;
+    font-family: Lato;
     font-size: 2rem;
   }
     .brand {
     font-family: Sacramento;
     font-size: 2.3rem;
-    color: black;
+    color: #FFEB5A;
     }
+}
 
-  #home-card {
-    background-color: orange;
-    opacity: 0.7;
-    max-height: 480px;
-  .carousel-control-prev-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000000' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
+  .steps {
+
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 6rem 0;
+    font-size: 1.2rem;
+    .deko {
+    background: url("../assets/deko.png");
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    }
   }
 
-  .carousel-control-next-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23ffd736' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
-  }
-  }
+ @media (min-width: 992px) and (max-width: 1199.98px) {
+}
+
+  @media (min-width: 768px) and (max-width: 991.98px) {
+}
+
+  @media (min-width: 576px) and (max-width: 767.98px) {
 
 }
+
+  @media (max-width: 575.98px) {
+
+ }
 
 </style>
