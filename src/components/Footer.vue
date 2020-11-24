@@ -79,4 +79,13 @@ export default {
   }
 }
 
+  @media (max-width: 575.98px) {
+    #footer {
+      padding: 1rem;
+      .about-author {
+        padding: 0 0 0 0;
+      }
+    }
+ }
+
 </style>

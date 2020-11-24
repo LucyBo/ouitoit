@@ -10,6 +10,8 @@
           <p>Learning with <span class="brand">Si to it </span> gives you a chance to acquire self-confidence in speaking all dialects of JavaScript.
           </p>
         </b-col>
+        <b-col class="girl-img">
+        </b-col>
       </b-row>
     </b-container>
   </div>
@@ -25,7 +27,7 @@
           <b-col class="deko" sm="auto" md="6" lg="3" xl="3" >
             Use social media for improving your skills
           </b-col>
-          <b-col class="deko" sm="auto" md="3" lg="3" xl="3" >
+          <b-col class="deko" sm="auto" md="6" lg="3" xl="3" >
             Learn easy as a child at any time!
           </b-col>
         </b-row>
@@ -52,6 +54,7 @@ export default {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  background-color: black;
   font-weight: 700;
   .row {
     padding: 8rem 0;
@@ -70,38 +73,81 @@ export default {
   }
     .brand {
     font-family: Sacramento;
-    font-size: 2.3rem;
+    font-size: 2rem;
     color: #FFEB5A;
     }
 }
 
   .steps {
-
-    background-size: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    padding: 6rem 0;
+    padding: 3rem 0rem;
     font-size: 1.2rem;
     .deko {
     background: url("../assets/deko.png");
     background-size: 100%;
     background-position: center;
     background-repeat: no-repeat;
+    padding: 2rem 0;
     }
   }
 
  @media (min-width: 992px) and (max-width: 1199.98px) {
+    .steps {
+    padding: 1rem 0rem;
+    font-size: 1.2rem;
+    .deko {
+    padding: 3rem 1rem;
+    width: 100%;
+    background-size: 90%;
+    }
+    }
 }
 
   @media (min-width: 768px) and (max-width: 991.98px) {
 }
 
   @media (min-width: 576px) and (max-width: 767.98px) {
+    .steps {
+    padding: 3rem 0rem;
+    font-size: 1.2rem;
+    .deko {
+    padding: 4rem 0;
+    width: 100%;
+    }
+  }
 
 }
 
   @media (max-width: 575.98px) {
+.home {
+     .row {
+    padding: 8rem 0;
+    font-family: Lato;
+    color: white;
+    font-weight: 700;
+    .text-left {
+      margin-left: 0rem;
+    }
+  }
+  p {
+    margin-top: 3rem;
+    color: white;
+    font-family: Lato;
+    font-size: 1rem;
+  }
+    .brand {
+    font-family: Sacramento;
+    font-size: 2rem;
+    color: #FFEB5A;
+    }
+}
 
+    .steps {
+    padding: 4rem 1rem;
+    font-size: 1.1rem;
+    .deko {
+    padding: 3rem 0;
+    }
+  }
  }
 
 </style>
