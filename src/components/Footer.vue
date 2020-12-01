@@ -4,7 +4,7 @@
         <p class="brand">Si to it</p>
         <p>Get daily tips and tricks for improve your skills!</p>
         <div class="input-group">
-        <b-form-input v-model="text" placeholder="Enter your e-mail"></b-form-input><b-button variant="outline-light">This button doesn't do anything yet!</b-button></div>
+        <b-form-input v-model="text" placeholder="Enter your e-mail"></b-form-input><b-button variant="outline-secondary">This button doesn't do anything yet!</b-button></div>
       <p class="social">
         Folow us: <a href="/"><img alt="facebook logo" src="../assets/facebook.png"></a><a href="/"><img alt="facebook logo" src="../assets/instagram.png"></a><a href="/"><img alt="facebook logo" src="../assets/github.png"></a>
       </p>

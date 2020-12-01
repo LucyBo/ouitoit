@@ -27,8 +27,11 @@
       </b-carousel-slide>
     </b-carousel>
       <p class="timestamp">
-          {{flashcard.timestamp}}
-        </p>
+          {{flashcard.createdAdd}}
+      </p>
+      <p class="timestamp">
+          {{flashcard.category}}
+      </p>
   </div>
   </b-col>
 </template>
