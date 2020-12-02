@@ -20,17 +20,15 @@
         </div>
       </b-carousel-slide>
 
-        <b-carousel-slide caption="Answer" img-blank img-alt="Blank image">
+      <b-carousel-slide caption="Answer" img-blank img-alt="Blank image">
         <div class="answer">
           {{flashcard.answer}}
         </div>
       </b-carousel-slide>
+
     </b-carousel>
       <p class="timestamp">
           {{flashcard.createdAdd}}
-      </p>
-      <p class="timestamp">
-          {{flashcard.category}}
       </p>
   </div>
   </b-col>
