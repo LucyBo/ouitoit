@@ -13,14 +13,14 @@
       @sliding-end="onSlideEnd"
     >
       <!-- Slide with blank fluid image to maintain slide aspect ratio -->
-      <b-carousel-slide caption="Question" img-blank img-alt="Blank image">
+      <b-carousel-slide caption="" img-blank img-alt="Blank image">
         <div class="image-overlay"></div>
         <div class="question">
           {{flashcard.question}}
         </div>
       </b-carousel-slide>
 
-      <b-carousel-slide caption="Answer" img-blank img-alt="Blank image">
+      <b-carousel-slide caption="" img-blank img-alt="Blank image">
         <div class="answer">
           {{flashcard.answer}}
         </div>
@@ -68,7 +68,7 @@ export default {
   }
 
   .carousel-caption {
-    top: 0;
+    top: 1rem;
     bottom: auto;
     height: 100%;
   }
@@ -80,14 +80,31 @@ export default {
     text-shadow: none;
     margin-top: 0;
   }
-  .question, .answer{
+  .question {
     color: black;
     text-shadow: none;
     min-height: 80%;
     display: flex;
     align-items: center;
     font-size: 1rem;
+    background: url("../assets/questionmark.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 
+  }
+
+  .answer{
+    color: black;
+    text-shadow: none;
+    min-height: 80%;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    background: url("../assets/answermark.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
   }
    pre code {
       font-family: Courier;
@@ -97,11 +114,11 @@ export default {
       margin-top: 0;
     }
   .carousel-control-prev-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%234481eb' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23FFEB5A' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
   }
 
   .carousel-control-next-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%234481eb' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23FFEB5A' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
   }
   .timestamp {
     padding-top: 5px;

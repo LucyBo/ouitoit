@@ -53,7 +53,7 @@ export default {
   background: url("../assets/pex.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: right bottom;
   background-color: black;
   font-weight: 700;
   .row {
@@ -63,6 +63,8 @@ export default {
     font-weight: 700;
     .text-left {
       margin-left: 0rem;
+      margin-top: 4rem;
+      margin-bottom: 14rem;
     }
   }
   p {
@@ -91,63 +93,86 @@ export default {
   }
 
  @media (min-width: 992px) and (max-width: 1199.98px) {
-    .steps {
-    padding: 1rem 0rem;
-    font-size: 1.2rem;
-    .deko {
-    padding: 3rem 1rem;
-    width: 100%;
-    background-size: 90%;
+  .home {
+    background-position: center;
+    .row{
+    .text-left{
+      margin-top: 3rem;
+      margin-bottom: 6rem;
     }
     }
+      .steps {
+      padding: 1rem 0rem;
+      font-size: 1.2rem;
+      .deko {
+      padding: 3rem 1rem;
+      width: 100%;
+      background-size: 90%;
+      }
+    }
+  }
 }
 
   @media (min-width: 768px) and (max-width: 991.98px) {
+    .home {
+      background-position: center;
+      .row{
+      .text-left{
+        margin-top: 3rem;
+        margin-bottom: 6rem;
+      }
+    }
+  }
 }
 
   @media (min-width: 576px) and (max-width: 767.98px) {
-    .steps {
-    padding: 3rem 0rem;
-    font-size: 1.2rem;
-    .deko {
-    padding: 4rem 0;
-    width: 100%;
+    .home {
+      background-position: center;
+      .steps {
+      padding: 3rem 0rem;
+      font-size: 1.2rem;
+      .deko {
+      padding: 4rem 0;
+      width: 100%;
+      }
     }
   }
-
 }
 
   @media (max-width: 575.98px) {
-.home {
-     .row {
-    padding: 8rem 0;
-    font-family: Lato;
-    color: white;
-    font-weight: 700;
-    .text-left {
-      margin-left: 0rem;
+  .home {
+      background-position: center;
+      .row {
+      padding: 8rem 0;
+      font-family: Lato;
+      color: white;
+      font-weight: 700;
+      .text-left {
+        margin-left: 0rem;
+        margin-top: 4rem;
+        margin-bottom: 4rem;
+      }
     }
-  }
-  p {
-    margin-top: 3rem;
-    color: white;
-    font-family: Lato;
-    font-size: 1rem;
-  }
-    .brand {
-    font-family: Sacramento;
-    font-size: 2rem;
-    color: #FFEB5A;
+    p {
+      margin-top: 3rem;
+      color: white;
+      font-family: Lato;
+      font-size: 1.2rem;
     }
-}
+      .brand {
+      font-family: Sacramento;
+      font-size: 2rem;
+      color: #FFEB5A;
+      }
+  }
 
-    .steps {
-    padding: 4rem 1rem;
-    font-size: 1.1rem;
-    .deko {
-    padding: 3rem 0;
+      .steps {
+      padding: 4rem 1rem;
+      font-size: 1.1rem;
+      .deko {
+      padding: 3rem 0;
+      }
     }
   }
- }
 
 </style>

@@ -1,9 +1,8 @@
 <template>
   <div class="container-fluid" id="navbar">
     <b-navbar class="container" toggleable="md" type="light">
-      <!-- <img id="logo-left" alt="logo" src="../assets/croissant.png"> -->
-      <b-navbar-brand href="#">Si to it
-        <!-- <img alt="logo" src="../assets/baguette.png"> <img id="logo-right" alt="logo" src="../assets/croissant.png"> -->
+      <b-navbar-brand href="/">Si to it
+        <img id="logo" alt="logo" src="../assets/parrot.png">
         </b-navbar-brand>
 
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
@@ -43,11 +42,8 @@ export default {
   color: #FFEB5A;
 }
 
- #logo-left {
-    transform: rotate(45deg);
-}
- #logo-right {
-    transform: rotate(225deg);
+ #logo {
+    margin-left: 10px;
 }
 
 img {
