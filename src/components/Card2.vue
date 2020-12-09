@@ -86,7 +86,7 @@ export default {
     min-height: 80%;
     display: flex;
     align-items: center;
-    font-size: 1rem;
+    font-size: 1.5rem;
     background: url("../assets/questionmark.png");
     background-repeat: no-repeat;
     background-size: cover;
@@ -100,7 +100,7 @@ export default {
     min-height: 80%;
     display: flex;
     align-items: center;
-    font-size: 1rem;
+    font-size: 1.2rem;
     background: url("../assets/answermark.png");
     background-repeat: no-repeat;
     background-size: cover;
