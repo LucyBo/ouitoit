@@ -25,8 +25,12 @@ export default {
 </script>
 
 <style lang="scss">
+
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;&family=Sacramento&display=swap');
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Lato, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -50,5 +54,11 @@ export default {
   font-family: "Sacramento";
   src: local("Sacramento"),
    url(./fonts/Sacramento.ttf) format("truetypefont");
+}
+
+@font-face {
+  font-family: "Lato";
+  src: local("Lato"),
+   url(./fonts/Lato-Thin.ttf) format("truetypefont");
 }
 </style>

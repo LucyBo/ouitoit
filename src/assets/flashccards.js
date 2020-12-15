@@ -1,5 +1,26 @@
 const flashcards = [
   {
+    id: '9',
+    createdAdd: '2020-12-15T15:41:56.400Z',
+    category: 'JavaScript',
+    question: 'Is this sentence true or false? If you pass null or undefined as a this binding parameter to call, apply, or bind, those values are effectively ignored, and instead the default binding rule applies to the invocation',
+    answer: 'It\'s true! If you pass null or undefined as a this binding parameter to call, apply, or bind, those values are effectively ignored, and instead the default binding rule applies to the invocation'
+  },
+  {
+    id: '8',
+    createdAdd: '2020-12-15T15:41:56.400Z',
+    category: 'JavaScript',
+    question: 'How to get random integer between 1 to 10 in JS?',
+    answer: 'Math.floor(Math.random() * 10) + 1'
+  },
+  {
+    id: '7',
+    createdAdd: '2020-12-15T15:41:56.400Z',
+    category: 'JavaScript',
+    question: 'What does hoisting mean? ',
+    answer: 'Hoisting is JavaScript\'s default behavior of moving declarations to the top. In JavaScript, a variable can be declared after it has been used. In other words; a variable can be used before it has been declared.'
+  },
+  {
     id: '6',
     createdAdd: '2020-12-09T19:01:32.717Z',
     category: 'JavaScript',
