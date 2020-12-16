@@ -21,8 +21,10 @@
       </b-carousel-slide>
 
       <b-carousel-slide caption="" img-blank img-alt="Blank image">
-        <div class="answer">
+        <div class="answer" v-bind:class="flashcard.style">
+          <vue-markdown>
           {{flashcard.answer}}
+          </vue-markdown>
         </div>
       </b-carousel-slide>
 
@@ -35,12 +37,17 @@
 </template>
 
 <script>
+import VueMarkdown from 'vue-markdown'
+
 export default {
   data () {
     return {
       slide: 0,
       sliding: null
     }
+  },
+  components: {
+    VueMarkdown
   },
   methods: {
     onSlideStart (slide) {
@@ -105,6 +112,15 @@ export default {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+  }
+  .bullet {
+    color: red;
+  }
+  .sentence {
+    color: blue;
+  }
+  .code {
+    font-family: Courier;
   }
    pre code {
       font-family: Courier;
