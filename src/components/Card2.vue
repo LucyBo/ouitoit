@@ -16,7 +16,9 @@
       <b-carousel-slide caption="" img-blank img-alt="Blank image">
         <div class="image-overlay"></div>
         <div class="question">
+          <vue-markdown>
           {{flashcard.question}}
+          </vue-markdown>
         </div>
       </b-carousel-slide>
 
@@ -30,7 +32,7 @@
 
     </b-carousel>
       <p class="timestamp">
-          {{flashcard.createdAdd}}
+        <span>{{moment(flashcard.createdAdd).format('YYYY-MM-DD')}}</span>
       </p>
   </div>
   </b-col>
@@ -83,17 +85,18 @@ export default {
   h3 {
     font-family: Lato, Helvetica, Arial;
     color: black;
-    font-size: 1.8rem;
+    font-size: 1.3rem;
     text-shadow: none;
     margin-top: 0;
   }
+
   .question {
     color: black;
     text-shadow: none;
     min-height: 80%;
     display: flex;
     align-items: center;
-    font-size: 1.5rem;
+    font-size: 1rem;
     background: url("../assets/questionmark.png");
     background-repeat: no-repeat;
     background-size: cover;
@@ -107,28 +110,24 @@ export default {
     min-height: 80%;
     display: flex;
     align-items: center;
-    font-size: 1.2rem;
+    font-size: 1rem;
     background: url("../assets/answermark.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    div{
+      width: 100%;
+    }
   }
-  .bullet {
-    color: red;
-  }
-  .sentence {
-    color: blue;
+  .bullets {
+    width: 100%;
   }
   .code {
     font-family: Courier;
+    color: black;
+    text-shadow: none;
+    // display: block;
   }
-   pre code {
-      font-family: Courier;
-      color: black;
-      text-shadow: none;
-      display: block;
-      margin-top: 0;
-    }
   .carousel-control-prev-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23FFEB5A' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
   }
@@ -151,9 +150,6 @@ export default {
   @media (min-width: 576px) and (max-width: 767.98px) {
     #card {
     padding-top: 5rem;
-    h3 {
-    font-size: 1.5rem;
-  }
   }
 
 }
@@ -161,9 +157,6 @@ export default {
   @media (max-width: 575.98px) {
   #card {
     padding-top: 5rem;
-    h3 {
-    font-size: 1.3rem;
-  }
   }
  }
 
