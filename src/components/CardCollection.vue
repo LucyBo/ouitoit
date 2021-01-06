@@ -2,17 +2,22 @@
   <div id="card-collection" class="container-fluid">
     <b-row>
         <Card2
-          v-for="flashcard in flashcards"
+          v-for="(flashcard) in flashcards"
           v-bind:flashcard = "flashcard"
-          v-bind:key= "flashcard.id">
+          v-bind:key= "flashcard.id"
+          :items="flashcard"
+          :per-page="perPage"
+          :current-page="currentPage">
         </Card2>
     </b-row>
+      <div class="mt-3">
+      <b-pagination v-model="currentPage" :total-rows="rows" align="center" :per-page="perPage"></b-pagination>
+    </div>
   </div>
 </template>
 
 <script>
 import Card2 from '@/components/Card2.vue'
-import flashcards from '../assets/flashccards.js'
 
 export default {
   name: 'CardCollection',
@@ -21,10 +26,26 @@ export default {
   },
   data () {
     return {
-      flashcards: flashcards
+      flashcards: [],
+      perPage: 3,
+      currentPage: 1
+      // items: flashcards
     }
+  },
+  computed: {
+    rows () {
+      return this.flashcards.length
+    }
+  },
+  created () {
+    fetch('/api/flashcards')
+      .then(response => response.json())
+      .then(data => {
+        this.flashcards = data
+      })
   }
 }
+
 </script>
 
 <style scoped lang="scss">

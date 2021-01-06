@@ -1,4 +1,4 @@
-const flashcards = [
+export default [
   {
     id: '20',
     createdAdd: '2021-01-05T13:24:50.955Z',
@@ -160,5 +160,3 @@ const flashcards = [
     answer: '### Boolean \n ### Null \n ### Undefined \n ### Number \n ### BigInt \n ### String \n ### Symbol'
   }
 ]
-
-export default flashcards

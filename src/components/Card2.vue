@@ -101,7 +101,9 @@ export default {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-
+      div {
+        width: 100%;
+      }
   }
 
   .answer{
@@ -122,11 +124,10 @@ export default {
   .bullets {
     width: 100%;
   }
-  .code {
+  code {
     font-family: Courier;
     color: black;
     text-shadow: none;
-    // display: block;
   }
   .carousel-control-prev-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23FFEB5A' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;

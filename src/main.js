@@ -6,6 +6,11 @@ import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import moment from 'moment'
+import { makeServer } from './server'
+
+if (process.env.NODE_ENV === 'development') {
+  makeServer()
+}
 
 Vue.config.productionTip = false
 
