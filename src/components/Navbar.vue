@@ -21,7 +21,8 @@
         </b-navbar-nav>
 
          <b-navbar-nav>
-          <router-link to="/login">Login |</router-link>
+          <router-link v-if="!isLoggedIn" to="/login">Login |</router-link><span v-if="isLoggedIn"> <a @click="logout">Logout</a></span>
+
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
@@ -30,7 +31,15 @@
 
 <script>
 export default {
-  name: 'Navbar'
+  name: 'Navbar',
+  computed: {
+    isLoggedIn () { return this.$store.getters.isLoggedIn }
+  },
+  methods: {
+    logout () {
+      this.$store.dispatch('logout')
+    }
+  }
 }
 </script>
 

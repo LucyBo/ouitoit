@@ -1,19 +1,17 @@
 <template>
   <section id="login">
-        <form v-on:submit="onSubmit()">
+        <form @submit.prevent="login">
             <h3>Sign in</h3>
             <div class="form-group">
-                <label>Username</label>
-                <input type="text" v-model="username" name="username" class="form-control form-control-lg" />
+                <label>Email</label>
+                <input type="text" v-model="email" name="email" class="form-control form-control-lg" />
             </div>
 
             <div class="form-group">
                 <label>Password</label>
                 <input type="password" v-model="password" name="password" class="form-control form-control-lg" />
             </div>
-            <button
-              type="submit"
-            > Login</button>
+            <button type="submit">Login</button>
         </form>
   </section>
 </template>
@@ -23,23 +21,18 @@
 export default {
   data () {
     return {
-      username: '',
+      email: '',
       password: '',
       loggedIn: false
     }
   },
   methods: {
-    onSubmit () {
-      fetch('/api/login', {
-        method: 'post',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          username: this.username,
-          password: this.password
-        })
-      }).then(response => response.json()).then(zzzzz => console.log(zzzzz))
+    login () {
+      const email = this.email
+      const password = this.password
+      this.$store.dispatch('login', { email, password })
+        .then(() => this.$router.push('/'))
+        .catch(err => console.log(err))
     }
   }
 }
