@@ -9,15 +9,19 @@
 
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav>
-          <router-link to="/">Home  |</router-link>
+          <router-link to="/">Home |</router-link>
         </b-navbar-nav>
 
         <b-navbar-nav>
-          <router-link to="/flashcards">Flashcards  |</router-link>
+          <router-link to="/flashcards">Flashcards |</router-link>
         </b-navbar-nav>
 
         <b-navbar-nav>
-          <router-link to="/about">About  |</router-link>
+          <router-link to="/about">About |</router-link>
+        </b-navbar-nav>
+
+         <b-navbar-nav>
+          <router-link to="/login">Login |</router-link>
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>

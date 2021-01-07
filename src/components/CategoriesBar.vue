@@ -12,7 +12,6 @@
 <script>
 
 import Category from '@/components/Category.vue'
-import flashcards from '../assets/flashccards.js'
 
 export default {
   name: 'CategoriesBar',
@@ -21,7 +20,7 @@ export default {
   },
   data () {
     return {
-      flashcards: flashcards
+      flashcards: []
     }
   },
   methods: {
@@ -36,6 +35,13 @@ export default {
         }
       })
     }
+  },
+  created () {
+    fetch('/api/flashcards')
+      .then(response => response.json())
+      .then(data => {
+        this.flashcards = data
+      })
   }
 }
 </script>

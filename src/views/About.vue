@@ -29,18 +29,11 @@
     <p class="action">
       Say <span>-Si!</span> to our flashacrds and learn with us!
     </p>
-    <Flashcards/>
   </div>
 </template>
 
 <script>
-import Flashcards from '@/components/Flashcards.vue'
 
-export default {
-  components: {
-    Flashcards
-  }
-}
 </script>
 
 <style scoped lang="scss">
