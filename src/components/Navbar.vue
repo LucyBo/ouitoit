@@ -20,10 +20,14 @@
           <router-link to="/about">About |</router-link>
         </b-navbar-nav>
 
-         <b-navbar-nav>
-          <router-link v-if="!isLoggedIn" to="/login">Login |</router-link><span v-if="isLoggedIn"> <a @click="logout">Logout</a></span>
-
+        <b-navbar-nav>
+          <router-link v-if="isLoggedIn" to="/admin">Admin |</router-link>
         </b-navbar-nav>
+
+         <b-navbar-nav>
+          <router-link v-if="!isLoggedIn" to="/login">Login |</router-link><span v-if="isLoggedIn"> <a @click="logout">Logout |</a></span>
+        </b-navbar-nav>
+
       </b-collapse>
     </b-navbar>
   </div>
@@ -36,9 +40,21 @@ export default {
     isLoggedIn () { return this.$store.getters.isLoggedIn }
   },
   methods: {
-    logout () {
+    logout: function () {
       this.$store.dispatch('logout')
+        .then(() => this.$router.push('/login'))
     }
+  },
+  created: function () {
+    this.$http.interceptors.response.use(undefined, function (err) {
+      return new Promise(function (resolve, reject) {
+        if (err.status === 401 && err.config && !err.config.__isRetryRequest) {
+          console.log(this.logout)
+          this.$store.dispatch(this.logout)
+        }
+        throw err
+      })
+    })
   }
 }
 </script>

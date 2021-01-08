@@ -10,9 +10,9 @@
           :current-page="currentPage">
         </Card2>
     </b-row>
-      <div class="mt-3">
+      <!-- <div class="mt-3">
       <b-pagination v-model="currentPage" :total-rows="rows" align="center" :per-page="perPage"></b-pagination>
-    </div>
+    </div> -->
   </div>
 </template>
 

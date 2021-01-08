@@ -3,15 +3,13 @@
         <form @submit.prevent="login">
             <h3>Sign in</h3>
             <div class="form-group">
-                <label>Email</label>
-                <input type="text" v-model="email" name="email" class="form-control form-control-lg" />
+                <input type="text" v-model="email" name="email" class="form-control form-control" placeholder="email"/>
             </div>
 
             <div class="form-group">
-                <label>Password</label>
-                <input type="password" v-model="password" name="password" class="form-control form-control-lg" />
+                <input type="password" v-model="password" name="password" class="form-control form-control" placeholder="password"/>
             </div>
-            <button type="submit">Login</button>
+            <button class="btn btn-info" type="submit">Login</button>
         </form>
   </section>
 </template>
@@ -22,8 +20,7 @@ export default {
   data () {
     return {
       email: '',
-      password: '',
-      loggedIn: false
+      password: ''
     }
   },
   methods: {
@@ -31,7 +28,7 @@ export default {
       const email = this.email
       const password = this.password
       this.$store.dispatch('login', { email, password })
-        .then(() => this.$router.push('/'))
+        .then(() => this.$router.push('/admin'))
         .catch(err => console.log(err))
     }
   }

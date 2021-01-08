@@ -27,7 +27,7 @@
             <img class="img-fluid" src="../assets/doggo.png">
     </b-container>
     <p class="action">
-      Say <span>-Si!</span> to our flashacrds and learn with us!
+      Say <span>-Si!</span> to our flashacards and learn with us!
     </p>
   </div>
 </template>
