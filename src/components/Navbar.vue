@@ -66,7 +66,6 @@ export default {
   overflow: hidden;
   position: fixed;
   z-index: 1000 !important;
-
 .b-navbar {
   color: #FFEB5A;
 }
@@ -93,8 +92,6 @@ img {
 }
 
 a {
-  font-family: Lato;
-  font-weight: 700;
   color: #FFEB5A;
   font-size: 1rem;
   text-transform: uppercase;

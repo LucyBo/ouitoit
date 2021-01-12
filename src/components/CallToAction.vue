@@ -12,8 +12,6 @@
   /* background: #3E76D5; */
   background: linear-gradient(180deg, #F95965 17%, #F95965 55%);
   padding: 1rem 0;
-  font-family: Lato;
-  font-weight: 700;
   color:white;
   font-size: 1.4rem;
   p {

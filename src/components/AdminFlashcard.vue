@@ -1,70 +1,57 @@
 <template>
-  <div id="admin-flashcard" >
+  <div id="admin-flashcard" class="container">
+    <div id="flashcard-list">
       <b-table striped hover :items="flashcards" :fields="fields">
-        <template #cell(show_details)="row">
+        <template #cell(details)="row">
           <b-button variant="primary" size="sm" @click="row.toggleDetails" class="mr-2">
             Edit
           </b-button>
         </template>
         <template #cell(delete)="row">
-          <b-button variant="danger" size="sm" @click="row.toggleDetails" class="mr-2">
+          <b-button variant="danger" size="sm" @click="row.toggleDetails; deleteFlashcard()" class="mr-2">
             Delete
           </b-button>
         </template>
         <template #row-details="row">
         <b-card>
-          <b-row class="mb-2">
-            <b-col sm="3" class="text-sm-right"><b>Id:</b></b-col>
-            <b-col>{{ row.item.id }}</b-col>
-          </b-row>
-          <b-row class="mb-2">
-            <b-col sm="3" class="text-sm-right"><b>Created Add:</b></b-col>
-            <b-col>{{ row.item.createdAdd }}</b-col>
-          </b-row>
-          <b-row class="mb-2">
-            <b-col sm="3" class="text-sm-right"><b>Category:</b></b-col>
-            <b-col>{{ row.item.category }}</b-col>
-          </b-row>
-          <b-row class="mb-2">
-            <b-col sm="3" class="text-sm-right"><b>Style:</b></b-col>
-            <b-col>{{ row.item.style }}</b-col>
-          </b-row>
-          <b-row class="mb-2">
-            <b-col sm="3" class="text-sm-right"><b>Question:</b></b-col>
-            <b-col>{{ row.item.question }}</b-col>
-          </b-row>
-          <b-row class="mb-2">
-            <b-col sm="3" class="text-sm-right"><b>Answer:</b></b-col>
-            <b-col>{{ row.item.answer }}</b-col>
-          </b-row>
-          <b-button size="sm" @click="row.toggleDetails">Hide Details</b-button>
+          <b-form>
+            <b-form-group
+              label="Id:"
+              label-cols="3" label-cols-lg="2"
+            >
+            <b-form-input :value="row.item.id" readonly></b-form-input>
+            </b-form-group>
+
+             <b-form-group
+              label="Created:"
+              label-cols="3" label-cols-lg="2"
+            ><b-form-input :value="row.item.createdAdd"></b-form-input></b-form-group>
+
+            <b-form-group
+              label="Category:"
+              label-cols="3" label-cols-lg="2"><b-form-input :value="row.item.category"></b-form-input></b-form-group>
+
+            <b-form-group
+              label="Style:"
+              label-cols="3" label-cols-lg="2">
+            <b-form-input :value="row.item.style"></b-form-input></b-form-group>
+
+            <b-form-group
+              label="Question:"
+              label-cols="3" label-cols-lg="2">
+            <b-form-textarea :value="row.item.question"></b-form-textarea></b-form-group>
+
+            <b-form-group
+              label="Answer:"
+              label-cols="3" label-cols-lg="2">
+            <b-form-textarea :value="row.item.answer"></b-form-textarea></b-form-group>
+
+          <b-button size="sm" @click="row.toggleDetails; updateFlashcard()">Save</b-button>
+          </b-form>
         </b-card>
       </template>
       </b-table>
-
-        <!-- <b-list-group horizontal
-          v-for="flashcard in flashcards"
-          v-bind:flashcard = "flashcard"
-          v-bind:key= "flashcard.id">
-          <b-list-group-item>{{flashcard.id}}</b-list-group-item>
-          <b-list-group-item id="question">{{flashcard.question}}</b-list-group-item>
-          <b-list-group-item id="answer">{{flashcard.answer}}</b-list-group-item>
-          <b-list-group-item id="edit">
-            <div>
-              <b-button id="show-btn" @click="$bvModal.show('bv-modal-example')">Edit</b-button>
-              <b-modal id="bv-modal-example" hide-footer>
-                <template #modal-title>
-                  Using <code>$bvModal</code> Methods
-                </template>
-                <div class="d-block text-center">
-                  <h3>Hello From This Modal!</h3>
-                </div>
-                <b-button class="mt-3" block @click="$bvModal.hide('bv-modal-example')">Close Me</b-button>
-              </b-modal>
-            </div>
-          </b-list-group-item>
-          <b-list-group-item id="delete"><button @click="deleteFlashcard()" class="btn btn-danger">Delete</button></b-list-group-item>
-        </b-list-group> -->
+    </div>
     </div>
 </template>
 
@@ -75,15 +62,37 @@ export default {
   data () {
     return {
       flashcards: [],
-      fields: ['id', 'category', 'question', 'answer', 'show_details', 'delete']
+      id: '',
+      category: '',
+      fields: ['id', 'category', 'question', 'answer', 'details', 'delete']
     }
   },
   methods: {
     deleteFlashcard () {
       console.log('już mnie nie ma')
+      fetch('/api/flashcard/:id', {
+        method: 'DELETE',
+        headers: {
+          // authorization: Bearer Code
+        }
+      })
+        .then(response => response.json())
+        // .then(this.$router.go(0))
+        .catch(err => console.log(err))
     },
-    update () {
+    updateFlashcard () {
       console.log('Flashcard edited!')
+      fetch('/api/flashcard/:id', {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json'
+          // authorization: Bearer Code
+        }
+      })
+        .then(response => response.json())
+        .catch(err => console.log(err))
+        // przeładowuje komponent
+        // .then(this.$router.go(0))
     }
   },
   created () {
@@ -100,10 +109,27 @@ export default {
 <style lang="scss">
 #admin-flashcard {
   padding-bottom: 4rem;
-  .flashcard-list {
-    max-height: 600px;
+  #flashcard-list{
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  }
+  b-table{
+    border: 1px solid lightgray;
+  }
+  th:nth-of-type(3) {
+    width: 200px;
+  }
+   th:nth-of-type(5) {
+    width: 100px;
+  }
+   th:nth-of-type(6) {
+    width: 100px;
+  }
+  #flashcard-list {
+    max-height: 500px;
     overflow: scroll;
   }
+
 }
 
 </style>

@@ -55,12 +55,9 @@ export default {
   background-size: cover;
   background-position: right bottom;
   background-color: black;
-  font-weight: 700;
   .row {
     padding: 8rem 0;
-    font-family: Lato;
     color: white;
-    font-weight: 700;
     .text-left {
       margin-left: 0rem;
       margin-top: 4rem;
@@ -70,7 +67,6 @@ export default {
   p {
     margin-top: 3rem;
     color: white;
-    font-family: Lato;
     font-size: 2rem;
   }
     .brand {
@@ -144,9 +140,7 @@ export default {
       background-position: center;
       .row {
       padding: 8rem 0;
-      font-family: Lato;
       color: white;
-      font-weight: 700;
       .text-left {
         margin-left: 0rem;
         margin-top: 4rem;
@@ -156,7 +150,6 @@ export default {
     p {
       margin-top: 3rem;
       color: white;
-      font-family: Lato;
       font-size: 1.2rem;
     }
       .brand {

@@ -49,7 +49,6 @@
     font-family: Sacramento;
     font-size: 2rem;
   }
-    font-family: Lato;
   h1 {
     font-size: 1.5rem;
     margin-top: 2rem;
@@ -100,7 +99,6 @@
         font-family: Sacramento;
         font-size: 2rem;;
       }
-      font-family: Lato;
       h1 {
         font-size: 1.5rem;
       }

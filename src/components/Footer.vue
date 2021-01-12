@@ -46,8 +46,6 @@ export default {
 #footer {
   background: #FFEB5A;
   padding: 2rem 0;
-  font-family: Lato;
-  font-weight: 700;
   input {
     max-width: 315px;
     border-radius: 0;

@@ -2,7 +2,7 @@
   <section id="admin">
     <h1> Secret Admin Panel </h1>
     <b-tabs content-class="mt-3" fill>
-      <b-tab title="Flashcards" active><p><AdminFlashcard/></p></b-tab>
+      <b-tab id="flashcards" title="Flashcards" active><p><AdminFlashcard/></p></b-tab>
       <b-tab title="Users"><p><AdminUsers/></p></b-tab>
       <b-tab title="Stats"><p><AdminStats/></p></b-tab>
   </b-tabs>

@@ -41,7 +41,7 @@ export default {
     padding-top: 8rem;
     padding-bottom: 4rem;
     form {
-      width: 70%;
+      max-width: 350px;
       margin: auto;
     }
     button {

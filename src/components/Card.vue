@@ -65,7 +65,6 @@ export default {
 <style lang="scss">
 
 #card {
-  font-family: Lato;
   .carousel{
   -webkit-box-shadow: 0px 0px 10px 5px rgba(242,242,242,0.9);
   box-shadow: 0px 0px 10px 5px rgba(242,242,242,0.9) !important;
@@ -81,7 +80,6 @@ export default {
   }
 
   h3 {
-    font-family: Lato, Helvetica, Arial;
     color: black;
     font-size: 2rem;
     margin-top: 0;
