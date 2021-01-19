@@ -19,34 +19,34 @@
               label="Id:"
               label-cols="3" label-cols-lg="2"
             >
-            <b-form-input :value="row.item.id" readonly></b-form-input>
+            <b-form-input :value="row.item.id" v-model="flashcardId"></b-form-input>
             </b-form-group>
 
              <b-form-group
               label="Created:"
               label-cols="3" label-cols-lg="2"
-            ><b-form-input :value="row.item.createdAdd"></b-form-input></b-form-group>
+            ><b-form-input :value="row.item.createdAdd" v-model="flashcardCreated"></b-form-input></b-form-group>
 
             <b-form-group
               label="Category:"
-              label-cols="3" label-cols-lg="2"><b-form-input :value="row.item.category"></b-form-input></b-form-group>
+              label-cols="3" label-cols-lg="2"><b-form-input :value="row.item.category" v-model="flashcardCategory"></b-form-input></b-form-group>
 
             <b-form-group
               label="Style:"
               label-cols="3" label-cols-lg="2">
-            <b-form-input :value="row.item.style"></b-form-input></b-form-group>
+            <b-form-input :value="row.item.style" v-model="flashcardStyle"></b-form-input></b-form-group>
 
             <b-form-group
               label="Question:"
               label-cols="3" label-cols-lg="2">
-            <b-form-textarea :value="row.item.question"></b-form-textarea></b-form-group>
+            <b-form-textarea :value="row.item.question" v-model="flashcardQuestion"></b-form-textarea ></b-form-group>
 
             <b-form-group
               label="Answer:"
               label-cols="3" label-cols-lg="2">
-            <b-form-textarea :value="row.item.answer"></b-form-textarea></b-form-group>
+            <b-form-textarea :value="row.item.answer" v-model="flashcardAnswer"></b-form-textarea></b-form-group>
 
-          <b-button size="sm" @click="row.toggleDetails; updateFlashcard()">Save</b-button>
+          <b-button size="sm" @click="row.toggleDetails; submitForm()">Save</b-button>
           </b-form>
         </b-card>
       </template>
@@ -62,12 +62,37 @@ export default {
   data () {
     return {
       flashcards: [],
-      id: '',
-      category: '',
+      flashcardId: '',
+      flashcardCreated: '',
+      flashcardCategory: '',
+      flashcardStyle: '',
+      flashcardQuestion: '',
+      flashcardAnswer: '',
       fields: ['id', 'category', 'question', 'answer', 'details', 'delete']
     }
   },
   methods: {
+    submitForm () {
+      fetch('/api/flashcard/:id', {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          id: this.flashcardId,
+          createdAdd: this.flashcardCreated,
+          category: this.flashcardCategory,
+          style: this.flashcardStyle,
+          question: this.flashcardQuestion,
+          answer: this.flashcardAnswer
+        })
+      })
+        .then(this.$router.go(0))
+        .catch(error => {
+          console.log(error)
+          this.error = 'Sth went wrong. Please, try again later'
+        })
+    },
     deleteFlashcard () {
       console.log('już mnie nie ma')
       fetch('/api/flashcard/:id', {
@@ -79,20 +104,6 @@ export default {
         .then(response => response.json())
         // .then(this.$router.go(0))
         .catch(err => console.log(err))
-    },
-    updateFlashcard () {
-      console.log('Flashcard edited!')
-      fetch('/api/flashcard/:id', {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json'
-          // authorization: Bearer Code
-        }
-      })
-        .then(response => response.json())
-        .catch(err => console.log(err))
-        // przeładowuje komponent
-        // .then(this.$router.go(0))
     }
   },
   created () {

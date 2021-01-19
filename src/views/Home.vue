@@ -1,7 +1,7 @@
 
 <template>
 <section>
-  <div class="home">
+  <div class="home" alt="Picture by Andrea Piacquadio from Pexels">
     <b-container>
       <b-row>
         <b-col class="text-left" sm="auto" md="6" lg="6" xl="6" >
@@ -50,7 +50,7 @@ export default {
 
 <style scoped lang="scss">
 .home {
-  background: url("../assets/pex.jpeg");
+  background: url("../assets/andrea.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: right bottom;
@@ -66,13 +66,13 @@ export default {
   }
   p {
     margin-top: 3rem;
-    color: white;
+    color: black;
     font-size: 2rem;
   }
     .brand {
     font-family: Sacramento;
     font-size: 2rem;
-    color: #FFEB5A;
+    color: black;
     }
 }
 
@@ -149,13 +149,11 @@ export default {
     }
     p {
       margin-top: 3rem;
-      color: white;
       font-size: 1.2rem;
     }
       .brand {
       font-family: Sacramento;
-      font-size: 2rem;
-      color: #FFEB5A;
+      font-size: 1.8rem;
       }
   }
 
