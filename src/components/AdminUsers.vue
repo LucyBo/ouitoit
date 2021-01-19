@@ -7,11 +7,10 @@
 <script>
 
 export default {
-  name: 'AdminUsers',
-  data () {
-    return {
-      users: []
-    }
-  }
+  name: 'AdminUsers'
 }
 </script>
+
+<style scoped>
+
+</style>

@@ -23,6 +23,15 @@ export function makeServer ({ environment = 'development' } = {}) {
     routes () {
       this.namespace = 'api'
 
+      this.post('/flashcard/', (schema, request) => {
+        const id = request.params.id
+        return new Response(
+          200,
+          {},
+          schema.db.flashcards.findBy({ id: id })
+        )
+      })
+
       this.get('/flashcard/:id', (schema, request) => {
         const id = request.params.id
         return new Response(

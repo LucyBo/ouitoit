@@ -3,12 +3,12 @@
     <div id="flashcard-list">
       <b-table striped hover :items="flashcards" :fields="fields">
         <template #cell(details)="row">
-          <b-button variant="primary" size="sm" @click="row.toggleDetails" class="mr-2">
+          <b-button variant="primary" size="sm" @click="row.toggleDetails">
             Edit
           </b-button>
         </template>
         <template #cell(delete)="row">
-          <b-button variant="danger" size="sm" @click="row.toggleDetails; deleteFlashcard()" class="mr-2">
+          <b-button variant="danger" size="sm" @click="row.toggleDetails; deleteFlashcard()">
             Delete
           </b-button>
         </template>
@@ -17,34 +17,36 @@
           <b-form>
             <b-form-group
               label="Id:"
-              label-cols="3" label-cols-lg="2"
+              label-cols="2" label-cols-lg="2"
             >
-            <b-form-input :value="row.item.id" v-model="flashcardId"></b-form-input>
+            <b-form-input :placeholder="row.item.id" v-model="flashcardId"></b-form-input>
             </b-form-group>
 
              <b-form-group
               label="Created:"
-              label-cols="3" label-cols-lg="2"
-            ><b-form-input :value="row.item.createdAdd" v-model="flashcardCreated"></b-form-input></b-form-group>
+              label-cols="2" label-cols-lg="2"
+            ><b-form-input :placeholder="row.item.createdAdd" v-model="flashcardCreated"></b-form-input></b-form-group>
 
             <b-form-group
               label="Category:"
-              label-cols="3" label-cols-lg="2"><b-form-input :value="row.item.category" v-model="flashcardCategory"></b-form-input></b-form-group>
+              label-cols="2" label-cols-lg="2">
+              <b-form-input :placeholder="row.item.category" v-model="flashcardCategory"></b-form-input>
+            </b-form-group>
 
             <b-form-group
               label="Style:"
-              label-cols="3" label-cols-lg="2">
-            <b-form-input :value="row.item.style" v-model="flashcardStyle"></b-form-input></b-form-group>
+              label-cols="2" label-cols-lg="2">
+            <b-form-input :placeholder="row.item.style" v-model="flashcardStyle"></b-form-input></b-form-group>
 
             <b-form-group
               label="Question:"
-              label-cols="3" label-cols-lg="2">
-            <b-form-textarea :value="row.item.question" v-model="flashcardQuestion"></b-form-textarea ></b-form-group>
+              label-cols="2" label-cols-lg="2">
+            <b-form-textarea :placeholder="row.item.question" v-model="flashcardQuestion"></b-form-textarea ></b-form-group>
 
             <b-form-group
               label="Answer:"
-              label-cols="3" label-cols-lg="2">
-            <b-form-textarea :value="row.item.answer" v-model="flashcardAnswer"></b-form-textarea></b-form-group>
+              label-cols="2" label-cols-lg="2">
+            <b-form-textarea :placeholder="row.item.answer" v-model="flashcardAnswer"></b-form-textarea></b-form-group>
 
           <b-button size="sm" @click="row.toggleDetails; submitForm()">Save</b-button>
           </b-form>
@@ -119,7 +121,7 @@ export default {
 
 <style lang="scss">
 #admin-flashcard {
-  padding-bottom: 4rem;
+  padding: 0rem 0 4rem 0rem;
   #flashcard-list{
   border: 1px solid lightgray;
   border-radius: 5px;
@@ -140,6 +142,34 @@ export default {
     max-height: 500px;
     overflow: scroll;
   }
+}
+
+   @media (min-width: 768px) and (max-width: 991.98px) {
+     .container {
+       min-width: 95%;
+       overflow-y: scroll
+     }
+}
+
+  @media (min-width: 576px) and (max-width: 767.98px) {
+    .container {
+       min-width: 95%;
+       overflow-y: scroll;
+       .card {
+         width: 90%
+       }
+     }
+
+}
+
+  @media (max-width: 575.98px) {
+    .container {
+       min-width: 95%;
+       overflow-y: scroll;
+       .card {
+         width: 70%
+       }
+     }
 
 }
 
