@@ -9,7 +9,7 @@ import moment from 'moment'
 import Axios from 'axios'
 import { makeServer } from './server'
 
-if (process.env.NODE_ENV === 'development') {
+if (process.env.NODE_ENV === 'development3') {
   makeServer()
 }
 

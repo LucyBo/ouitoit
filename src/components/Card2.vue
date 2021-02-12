@@ -32,7 +32,9 @@
 
     </b-carousel>
       <p class="timestamp">
-        <span>{{moment(flashcard.createdAdd).format('YYYY-MM-DD')}}</span>
+        <span>{{moment(flashcard.createdAt).format('YYYY-MM-DD')}}</span>
+        <br>
+        <span>{{flashcard.id}}</span>
       </p>
   </div>
   </b-col>

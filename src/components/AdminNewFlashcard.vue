@@ -17,18 +17,6 @@
       <b-col>
           <b-form>
             <b-form-group
-              label="Id:"
-              label-cols="3" label-cols-lg="2"
-            >
-            <b-form-input v-model="newId"></b-form-input>
-            </b-form-group>
-
-             <b-form-group
-              label="Created:"
-              label-cols="3" label-cols-lg="2"
-            ><b-form-input v-model="newCreated"></b-form-input></b-form-group>
-
-            <b-form-group
               label="Category:"
               label-cols="3" label-cols-lg="2"><b-form-input v-model="newCategory"></b-form-input></b-form-group>
 
@@ -58,13 +46,12 @@
 
 import _ from 'lodash'
 import marked from 'marked'
+import axios from 'axios'
 
 export default {
   name: 'AdminNewFlashcard',
   data () {
     return {
-      newId: '',
-      newCreated: '',
       newCategory: '',
       newStyle: '',
       newQuestion: '',
@@ -76,20 +63,15 @@ export default {
   methods: {
     submitForm () {
       console.log('submit clicked!')
-      fetch('/api/flashcard', {
-        method: 'post',
-        headers: {
-          'Content-Type': 'application/json'
-          // authorization: Bearer Code
-        },
-        body: JSON.stringify({
-          id: this.newId,
-          createdAdd: this.newCreated,
+      axios({
+        url: 'http://ec2-3-231-156-48.compute-1.amazonaws.com/flashcard',
+        data: {
           category: this.newCategory,
           style: this.newStyle,
           question: this.newQuestion,
           answer: this.newAnswer
-        })
+        },
+        method: 'POST'
       })
         // .then(this.$router.go(0))
         .then(console.log(this.newId))

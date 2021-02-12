@@ -37,7 +37,7 @@ export default {
     }
   },
   created () {
-    fetch('/api/flashcards')
+    fetch('http://ec2-3-231-156-48.compute-1.amazonaws.com/flashcard')
       .then(response => response.json())
       .then(data => {
         this.flashcards = data
