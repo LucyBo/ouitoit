@@ -4,7 +4,6 @@
       v-for="(flashcard, index) in flashcards"
       v-bind:flashcard = "flashcard"
       v-bind:key= "flashcard.id">
-
       <div class="row">
       <div class="col">{{index}}</div>
       <div class="col">{{flashcard.id}}</div>
@@ -24,38 +23,39 @@
           <b-row >
             <b-col>
               <b-card class="question mx-auto" >
-                <b-card-text v-model="newQuestion">
+                <b-card-text v-model="editedQuestion">
                   <div v-html="compiledQuestion"></div>
                 </b-card-text>
               </b-card>
               <b-card class="answer mx-auto">
-                <b-card-text  v-model="newAnswer">
+                <b-card-text  v-model="editedAnswer">
                   <div v-html="compiledAnswer"></div>
                 </b-card-text>
               </b-card>
             </b-col>
             <b-col>
-                <b-form>
+                <b-form v-bind:flashcard = "flashcard">
                   <b-form-group
                     label="Category:"
-                    label-cols="3" label-cols-lg="2"><b-form-input v-model="newCategory"></b-form-input></b-form-group>
+                    label-cols="3" label-cols-lg="2"><b-form-input v-model="editedCategory">
+                    </b-form-input></b-form-group>
 
                   <b-form-group
                     label="Style:"
                     label-cols="3" label-cols-lg="2">
-                  <b-form-input v-model="newStyle"></b-form-input></b-form-group>
+                  <b-form-input v-model="editedStyle"></b-form-input></b-form-group>
 
                   <b-form-group
                     label="Question:"
                     label-cols="3" label-cols-lg="2">
-                  <textarea v-model="newQuestion" @input="update" ></textarea ></b-form-group>
+                  <textarea v-model="editedQuestion" @input="update" ></textarea ></b-form-group>
 
                   <b-form-group
                     label="Answer:"
                     label-cols="3" label-cols-lg="2">
-                  <textarea v-model="newAnswer"></textarea></b-form-group>
+                  <textarea v-model="editedAnswer"></textarea></b-form-group>
 
-                <b-button variant="success" size="sm" @click="submitForm()">Submit</b-button>
+                <b-button variant="success" size="sm" @click="submitForm(flashcard.id)">Submit</b-button>
                 </b-form>
             </b-col>
           </b-row>
@@ -67,13 +67,21 @@
 
 <script>
 import axios from 'axios'
+import marked from 'marked'
+import _ from 'lodash'
 
 export default {
   name: 'AdminFlashcard',
   data () {
     return {
       flashcards: [],
-      isEditing: ''
+      isEditing: '',
+      editedCategory: '',
+      editedStyle: '',
+      editedQuestion: '',
+      editedAnswer: '',
+      editedId: '',
+      input: '# question'
     }
   },
   methods: {
@@ -84,17 +92,20 @@ export default {
     resetEditSection () {
       this.isEditing = ''
     },
+    update: _.debounce(function (e) {
+      this.input = e.target.value
+    }, 300),
     submitForm (id) {
       console.log(id)
       axios({
         url: 'http://ec2-3-231-156-48.compute-1.amazonaws.com/flashcard/' + id,
         method: 'PUT',
         data: {
-          id: this.flashcardId,
-          category: this.flashcardCategory,
-          style: this.flashcardStyle,
-          question: this.flashcardQuestion,
-          answer: this.flashcardAnswer
+          id: id,
+          category: this.editedCategory,
+          style: this.editedStyle,
+          question: this.editedQuestion,
+          answer: this.editedAnswer
         }
       })
         // .then(this.$router.go(0))
@@ -113,6 +124,17 @@ export default {
           console.log(error)
           this.error = 'Sth went wrong. Please, try again later'
         })
+    }
+  },
+  computed: {
+    compiledMarkdown () {
+      return marked(this.input)
+    },
+    compiledQuestion () {
+      return marked(this.editedQuestion)
+    },
+    compiledAnswer () {
+      return marked(this.editedAnswer)
     }
   },
   created () {

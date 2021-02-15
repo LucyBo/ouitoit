@@ -28,7 +28,7 @@
             <b-form-group
               label="Question:"
               label-cols="3" label-cols-lg="2">
-            <textarea v-model="newQuestion" @input="update" ></textarea ></b-form-group>
+            <textarea v-model="newQuestion"></textarea ></b-form-group>
 
             <b-form-group
               label="Answer:"
